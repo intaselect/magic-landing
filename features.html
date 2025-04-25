@@ -1,0 +1,150 @@
+<!-- features.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features | Magic Template</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- رابط ملف التنسيقات الأساسي -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+    <img src="images/magic logo.gif" alt="Magic Cursor Logo" class="magic-cursor">
+
+  <!-- Navbar (يمكن تضمينها باستخدام include أو نسخها كما في الصفحة الرئيسية) -->
+  <div class="navbar navbar--extended">
+    <div class="container navbar__wrapper">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/magic logo.gif" alt="Magic Logo" style="height: 60px;">
+      </a>
+      <div class="navbar__slider">
+        <ul class="navbar__slider__track">
+            <li><a href="index.html">Home</a></li>
+
+
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="support.html" class="cta-button">Support</a></li>
+            <li><a href="get-started.html" class="cta-button">Get Started</a></li>
+            <li><a href="builder.html">Builder</a></li>
+
+
+
+            <li><a href="#" class="cta-button">Get Started</a></li>
+        </ul>
+      </div>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="features landing__section">
+    <div class="container">
+      <h1 class="section-title">✨ Powerful Features</h1>
+      <p class="section-description">Everything you need to build magical landing pages easily.</p>
+      <div class="features__grid">
+        <div class="feature__item">
+          <h3>🔮 Drag & Drop Builder</h3>
+          <p>Customize everything with ease using intuitive visual editing.</p>
+        </div>
+        <div class="feature__item">
+          <h3>🎨 Multiple Layouts</h3>
+          <p>Choose from various homepage and section designs.</p>
+        </div>
+        <div class="feature__item">
+          <h3>⚡ Lightning Fast</h3>
+          <p>Optimized for speed and performance with clean HTML/CSS.</p>
+        </div>
+        <div class="feature__item">
+          <h3>🌗 Dark Mode</h3>
+          <p>Switch between light and dark themes instantly.</p>
+        </div>
+        <div class="feature__item">
+          <h3>📱 Responsive Design</h3>
+          <p>Looks amazing on mobile, tablet, and desktop.</p>
+        </div>
+        <div class="feature__item">
+          <h3>🧰 Clean Code</h3>
+          <p>Well-commented and modular code for easy customization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero unit -->
+	<div class="hero">
+		<div class="hero__overlay hero__overlay--gradient"></div>
+		<div class="hero__mask"></div>
+		<div class="hero__inner">
+			<div class="container">
+				<div class="hero__content">
+					<div class="hero__content__inner" id='navConverter'>
+						<h1 class="hero__title">Build with Magic</h1>
+						<p class="hero__text">Magic is a clean and creative landing page template crafted to showcase your startup, app, or service. Responsive, lightweight, and easy to customize.</p>
+						<a href="#" class="button button__accent">Buy Now</a>
+						<a href="#features" class="button hero__button">See Features</a>
+						<div class="hero-box">
+							<img src="images/magic logo.gif" class="hover-img" data-alt="images/buttle1.gif" alt="Book 1">
+							
+						  </div>
+						  <div class="hero__cta">
+							<h2>✨ Discover What Magic Can Do for You ✨</h2>
+							<a href="#features" class="button button__accent">Explore Features</a>
+						  </div>
+						  
+						</div>
+											  
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+  <script src="js/app.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.innerText = '☀️ Light Mode';
+    }
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.innerText = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleBtn.innerText = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+  <script>
+    const cursor = document.querySelector('.magic-cursor');
+  
+    if (cursor) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursor.style.opacity = 1;
+  
+        cursor.style.filter = 'drop-shadow(0 0 10px #ffd700) brightness(1.8)';
+  
+        clearTimeout(cursor.hideTimeout);
+        cursor.hideTimeout = setTimeout(() => {
+          cursor.style.opacity = 0;
+          cursor.style.filter = 'drop-shadow(0 0 4px #ffd700) brightness(1)';
+        }, 300);
+      });
+    }
+  </script>
+  
+  
+</body>
+</html>

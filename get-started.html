@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started - Magic</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar navbar--extended">
+    <div class="container navbar__wrapper">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/magic logo.gif" alt="Magic Logo" style="height: 60px;">
+      </a>
+      <div class="navbar__slider">
+        <ul class="navbar__slider__track">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="get-started.html" class="cta-button">Get Started</a></li>
+          <li><a href="builder.html">Builder</a></li>
+
+        </ul>
+      </div>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <section class="landing__section" style="text-align: center; padding: 100px 20px;">
+    <h1 style="font-size: 2.5rem; color: white;">Start Building with Magic ✨</h1>
+    <p style="max-width: 600px; margin: 20px auto; color: white; font-size: 1.2rem;">
+      You're just a few clicks away from launching your awesome website. Let's begin your magical journey!
+    </p>
+    <a href="pricing.html" class="button button__accent" style="margin-top: 30px; display: inline-block;">Choose a Plan</a>
+  </section>
+
+  <script src="js/app.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.innerText = '☀️ Light Mode';
+    }
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+      toggleBtn.innerText = body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>

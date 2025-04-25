@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials | Magic</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/bg-texture.jpg') repeat;
+      background-color: #ffa600;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .section h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px #c06b00;
+      margin-bottom: 20px;
+    }
+    .testimonial {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      color: white;
+      transition: transform 0.3s;
+    }
+    .testimonial:hover {
+      transform: translateY(-10px);
+    }
+    .testimonial p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      color: #fff4c4;
+      font-size: 18px;
+    }
+    .magic-cursor {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: url('images/magic logo.gif') no-repeat center center / contain;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="magic-cursor"></div>
+  <img src="images/magic logo.gif" alt="Magic Cursor Logo" class="magic-cursor">
+    
+
+  <!-- ✅ Navbar (نفس الشريط العلوي من الصفحة الرئيسية) -->
+  <div class="navbar navbar--extended">
+    <div class="container navbar__wrapper">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/magic logo.gif" alt="Magic Logo" style="height: 60px;">
+      </a>
+      <div class="navbar__slider">
+        <ul class="navbar__slider__track">
+          <li><a href="index.html">Home</a></li>
+
+
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="support.html" class="cta-button">Support</a></li>
+          <li><a href="get-started.html" class="cta-button">Get Started</a></li>
+          <li><a href="builder.html">Builder</a></li>
+
+
+
+          <li><a href="#" class="cta-button">Get Started</a></li>
+        </ul>
+      </div>
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+  </div>
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What People Are Saying</h2>
+      <div class="testimonials-grid">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <p>"This template is pure magic! ✨ Boosted my site in hours!"</p>
+          <span>- Layla H.</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <p>"So smooth and responsive. Perfect for my startup!"</p>
+          <span>- Omar T.</span>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <p>"Absolutely love the animation touches. Looks premium!"</p>
+          <span>- Sarah M.</span>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <p>"Easiest template I ever used. Saved me tons of time."</p>
+          <span>- John K.</span>
+        </div>
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <p>"Clients loved the design instantly. 10/10."</p>
+          <span>- Mariam A.</span>
+        </div>
+        <!-- Card 6 -->
+        <div class="testimonial-card">
+          <p>"Super intuitive. Works great on mobile too."</p>
+          <span>- Nader B.</span>
+        </div>
+        <!-- Card 7 -->
+        <div class="testimonial-card">
+          <p>"Feels magical with the cursor effects. Well done!"</p>
+          <span>- Yasmine F.</span>
+        </div>
+        <!-- Card 8 -->
+        <div class="testimonial-card">
+          <p>"Highly recommend for developers and designers alike."</p>
+          <span>- Ali S.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="section">
+    <h1>What Our Users Say ✨</h1>
+    <div class="testimonial">
+      <p>"Magic helped me build a landing page for my startup in under an hour. The animations and design are simply stunning!"</p>
+      <strong>— Sarah A., Product Designer</strong>
+    </div>
+    <div class="testimonial">
+      <p>"I loved how lightweight and responsive the Magic template is. It just works on every device!"</p>
+      <strong>— Ahmed R., Developer</strong>
+    </div>
+    <div class="testimonial">
+      <p>"I was blown away by how easy it was to customize. The code is clean and the design is eye-catching!"</p>
+      <strong>— Lina K., Freelancer</strong>
+    </div>
+  </div>
+
+  <script>
+    const cursor = document.querySelector('.magic-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursor.style.opacity = 1;
+      cursor.style.filter = 'drop-shadow(0 0 10px #ffd700) brightness(1.8)';
+      clearTimeout(cursor.hideTimeout);
+      cursor.hideTimeout = setTimeout(() => {
+        cursor.style.opacity = 0;
+        cursor.style.filter = 'drop-shadow(0 0 4px #ffd700) brightness(1)';
+      }, 300);
+    });
+  </script>
+</body>
+</html>

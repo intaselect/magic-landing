@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffa600;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar {
+      position: relative;
+      top: 0;
+      background-color: #ffa600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    .navbar__logo img {
+      height: 60px;
+    }
+
+    .navbar__slider__track {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar__slider__track li a {
+      text-decoration: none;
+      padding: 10px 15px;
+      background: #fff;
+      border-radius: 10px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 100px auto 40px;
+      background-color: #fff3e0;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px #000;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button {
+      width: 100%;
+      background-color: orange;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* الماوس السحري */
+    .magic-cursor {
+      width: 32px;
+      height: 32px;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("images/magic logo.gif");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✨ Cursor Logo -->
+  <div class="magic-cursor"></div>
+
+  <!-- ✅ Navbar -->
+  <div class="navbar navbar--extended">
+    <div class="container navbar__wrapper">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/magic logo.gif" alt="Magic Logo" style="height: 60px;">
+      </a>
+  
+      <!-- ✅ سلايدر الزرائر -->
+      <div class="navbar__slider">
+        <ul class="navbar__slider__track">
+            <li><a href="#" onclick="return false;" style="opacity: 0.5; pointer-events: none;">Home</a></li>
+
+
+
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="support.html" class="cta-button">Support</a></li>
+
+          <li><a href="get-started.html" class="cta-button">Get Started</a></li>
+          <li><a href="builder.html">Builder</a></li>
+
+
+
+          <li><a href="#" class="cta-button">Get Started</a></li>
+        </ul>
+      </div>
+  
+      <!-- 🌙 زر الوضع الداكن -->
+      <button id="themeToggle">🌙 Dark Mode</button>
+
+    </div>
+  </div>
+  <!-- ✅ Contact Section -->
+  <h1>Contact Us</h1>
+  <div class="container">
+    <form action="mailto:gospstudio2030@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- ✅ JavaScript for cursor -->
+  <script>
+    const cursor = document.querySelector('.magic-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursor.style.opacity = 1;
+
+      cursor.style.filter = 'drop-shadow(0 0 10px #ffd700) brightness(1.8)';
+
+      clearTimeout(cursor.hideTimeout);
+      cursor.hideTimeout = setTimeout(() => {
+        cursor.style.opacity = 0;
+        cursor.style.filter = 'drop-shadow(0 0 4px #ffd700) brightness(1)';
+      }, 300);
+    });
+  </script>
+
+</body>
+</html>
